@@ -22,4 +22,11 @@ public class CountryService {
                 .findFirst()
                 .orElse(null);
     }
+
+    public List<Country> getAllCountries() {
+        ApplicationContext context = new ClassPathXmlApplicationContext("country.xml");
+        @SuppressWarnings("unchecked")
+        List<Country> countries = (List<Country>) context.getBean("countryList");
+        return countries;
+    }
 }

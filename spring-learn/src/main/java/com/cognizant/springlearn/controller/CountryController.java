@@ -37,4 +37,12 @@ public class CountryController {
         LOGGER.info("END");
         return country;
     }
+
+    @GetMapping("/countries")
+    public java.util.List<Country> getAllCountries() {
+        LOGGER.info("START");
+        java.util.List<Country> countries = countryService.getAllCountries();
+        LOGGER.info("END");
+        return countries;
+    }
 }
